@@ -1,26 +1,29 @@
 import React from "react";
 import styled from "styled-components";
+import Fade from "react-reveal/Fade";
 
 function Section({ title, img }) {
   return (
     <Wrap img={img}>
-      <ItemText>
-        <h1>{title}</h1>
-        <p>Order Online for Touchless Delivery</p>
-      </ItemText>
-
+      <Fade bottom>
+        <ItemText>
+          <h1>{title}</h1>
+          <p>Order Online for Touchless Delivery</p>
+        </ItemText>
+      </Fade>
       <Buttons>
-        {title === "Accessories" ? (
-          <ButtonGroup>
-            <LeftButton>Shop Now</LeftButton>
-          </ButtonGroup>
-        ) : (
-          <ButtonGroup>
-            <LeftButton>Custom Order</LeftButton>
-            <RightButton>Existing Inventory</RightButton>
-          </ButtonGroup>
-        )}
-
+        <Fade bottom>
+          {title === "Accessories" ? (
+            <ButtonGroup>
+              <LeftButton>Shop Now</LeftButton>
+            </ButtonGroup>
+          ) : (
+            <ButtonGroup>
+              <LeftButton>Custom Order</LeftButton>
+              <RightButton>Existing Inventory</RightButton>
+            </ButtonGroup>
+          )}
+        </Fade>
         <DownArrow src="images/down-arrow.svg" />
       </Buttons>
     </Wrap>
